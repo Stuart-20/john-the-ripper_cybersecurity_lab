@@ -40,7 +40,7 @@ Since i carried out the study using kali linux, JTP come installed i proved this
 
 ```bash
  john 
- 
+ ```
 ![Checking JTP version](screenshots/nc0.png)
 
 # Some of the frags / options used in the study JTP
