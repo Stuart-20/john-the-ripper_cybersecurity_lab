@@ -55,15 +55,36 @@ john --restore
 
  2. To retrieve the cracked password, can use `--show--` followed by the file which had the hash 
  ```bash 
- john `--show` hash.txt
+ john --show 
  ```
  ![shows the show option](screenshots/pic3.png)
 
  3. To show the john sessions. i used -         `--status--` 
  ```bash 
- john `--status--`
+ john --status
  ```
- - `--list=formats--` Lists the supported password-hash formats.
+ - `--list=formats` Lists the supported password-hash formats.
+
+ - `--john -h` Lists the menu on how to us the tool.
+
+ # Back onto the modes 
+ 1. Single crack mode 
+Here john takes a string and generates variations of the string in order to generate the set of passwords.
+
+I generated using a a hash in the formate of MD5 to be cracked using `-john-` 
+
+![Hashed password](screenshots/pic5.png)
+
+After the generation of the hash i stored the hash into the hash.txt file using the `-echo-` 
+
+![Stored hash](screenshots/pic6.png)
+
+Before going into cracking i first came up with my own wordlist and password hashes. Wordlist is a file with a number pain text (pain passwords) to be used in my study. This gave me assurance of a safe and ethical study. it was saved into txt file
+
+![My own wordlist](screenshots/nc1.png)
+
+
+
 
 
 
