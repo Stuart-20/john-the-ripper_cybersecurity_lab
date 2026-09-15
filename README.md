@@ -29,7 +29,7 @@ John the ripper is a free open source password cracking tool used to recover pla
 
 Back to its history: JTP is maintained by openwall since 1986 which makes it older and more used then most of the hash crackers.
 
-## Modes used in john thr ripper
+## Modes used in john the ripper
 In my study i looked at 3three(3) modes:
   .Single crack mode
   .Wordlist mode
@@ -39,3 +39,11 @@ In my study i looked at 3three(3) modes:
 Since i carried out the study using kali linux, JTP come installed i proved this by running command "john" to known the version 
 
 ![Checking JTP version](screenshots/nc0.png)
+
+# Some of the frags / options used with JTP
+
+If a John the Ripper session is interrupted, the `--restore`
+option can be used to continue the previous session.
+
+```bash
+john --restore
