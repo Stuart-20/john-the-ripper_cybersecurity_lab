@@ -36,7 +36,10 @@ In my study i looked at 3three(3) modes:
   .Incremental mode
 
 # The flow of the study
-Since i carried out the study using kali linux, JTP come installed i proved this by running command `--john--` to known the version .
+Since i carried out the study using kali linux, JTP come installed i proved this by running command `--john--` to known the version.
+
+```bash
+ john 
  
 ![Checking JTP version](screenshots/nc0.png)
 
