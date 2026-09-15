@@ -1,6 +1,6 @@
 #  John the Ripper — Password Auditing Lab
 
-A hands-on cybersecurity laboratory.Illustratin on the ude of John the Ripper on Linux.
+A hands-on cybersecurity laboratory. illustrating on the ude of John the Ripper on Linux.
 
 ##  Overview
 
@@ -14,15 +14,28 @@ created specifically for educational purposes and learning.
 ##  Objectives
 
 - Understand password hashing
-- Install and configure John the Ripper
+-Introduction to JTP
 - Generate a test MD5 hash
 - Perform a dictionary attack
 - Use password wordlists
 - Analyze John the Ripper output
 - Troubleshoot common errors
-- Understand the security risks of weak passwords# 🔐 John the Ripper — Password Auditing Lab
+- Understand the security risks of weak password John the Ripper — Password Auditing Lab
 
 A hands-on cybersecurity laboratory demonstrating password auditing with John the Ripper on Linux.
 
 ## Introduction
-John the ripper is a free open source password cracking tool used for security testing, designed to work with password hashes .
+John the ripper is a free open source password cracking tool used to recover plaintext password from cryptograph hashes from wordlists, mask patterned.
+
+Back to its history: JTP is maintained by openwall since 1986 which makes it older and more used then most of the hash crackers.
+
+## Modes used in john thr ripper
+In my study i looked at 3three(3) modes:
+  .Single crack mode
+  .Wordlist mode
+  .Incremental mode
+
+# The flow of the study
+Since i carried out the study using kali linux, JTP come installed i proved this by running command "john" to known the version 
+
+![Checking JTP version](screenshots/nc0.png)
