@@ -68,7 +68,7 @@ john --restore
  - `--john -h` Lists the menu on how to us the tool.
 
  # Back onto the modes 
- 1. Single crack mode 
+ 1. **Single crack mode**
 Here john takes a string and generates variations of the string in order to generate the set of passwords.
 
 I generated using a a hash in the formate of MD5 to be cracked using `-john-` 
@@ -86,17 +86,20 @@ Before going into cracking i first came up with my own wordlist and password has
 Then i used the wordlist i formed to crack the hash 
 ![cracked hash](screenshots/pic7.png)
 
-2. Wordlist mode 
+2. **Wordlist mode**
 In this mode, a wordlist is provided to john in order to crack the hashes. the famous wordlists used in kali include `--rockyou.txt` , `--johnlist.txt` etc
 In my study i used rockyou.txt 
 
 ![use of rockyou.tx](screenshots/list.png)
 
-3. Incremental mode
+3. **Incremental mode**
 This is the most powerful mode while using `-john` whoever it takes long time when the password is long or has many combination of characters 
 the syntax can be;
 ```bash
 john -i:digits passwordfile.txt
+```
+
+where :i frag tell `--john` incremental mode and the "digit" is the place holder to indicate the number of of digits 
 
 
 
