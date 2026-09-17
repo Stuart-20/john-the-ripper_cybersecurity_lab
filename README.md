@@ -101,8 +101,8 @@ john -i:digits passwordfile.txt
 
 where :i frag tell `--john` incremental mode and the "digit" is the place holder to indicate the number of of digits 
 
+# ```⚠️ Ethical Disclaimer
 
+This project was created strictly for educational and cybersecurity training purposes in a controlled lab environment.
 
-
-
-
+All password hashes and credentials used in this project are test data created specifically for the lab. No real user accounts, personal credentials, private systems, or unauthorized networks were targeted.
