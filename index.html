@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description"
+    content="A hands-on cybersecurity laboratory demonstrating password auditing with John the Ripper on Kali Linux.">
+
+<meta name="author" content="Stuart">
+
+<title>John the Ripper | Cybersecurity Lab</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+<!--
+     NAVIGATION -->
+
+<nav class="navbar">
+
+    <div class="nav-container">
+
+        <a href="#" class="logo">
+            🔐 JTR LAB
+        </a>
+
+        <ul class="nav-links">
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#objectives">Objectives</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#commands">Commands</a></li>
+            <li><a href="#evidence">Evidence</a></li>
+            <li><a href="#lessons">Lessons</a></li>
+        </ul>
+
+    </div>
+
+</nav>
+
+<!-- 
+     HERO SECTION -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <p class="hero-label">
+            CYBERSECURITY LABORATORY
+        </p>
+
+        <h1>
+            John the Ripper
+        </h1>
+
+        <h2>
+            Password Auditing & Dictionary Attack Lab
+        </h2>
+
+        <p class="hero-description">
+            A hands-on cybersecurity project demonstrating password
+            hashing, dictionary attacks, wordlists, session recovery,
+            troubleshooting, and password auditing using John the Ripper
+            on Kali Linux.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#overview" class="btn primary">
+                Explore Project
+            </a>
+
+            <a href="#commands" class="btn secondary">
+                View Commands
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- MAIN CONTENT -->
+
+<main>
+
+    <!--  PROJECT OVERVIEW -->
+
+    <section id="overview" class="section">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                01 — PROJECT
+            </p>
+
+            <h2>
+                Project Overview
+            </h2>
+
+        </div>
+
+        <div class="overview-grid">
+
+            <div class="overview-text">
+
+                <p>
+                    This project documents a controlled cybersecurity
+                    laboratory using John the Ripper to understand how
+                    password auditing and dictionary attacks work.
+                </p>
+
+                <p>
+                    The laboratory uses test credentials and hashes
+                    created specifically for educational purposes.
+                    The goal is to understand the technical process
+                    behind password auditing rather than targeting
+                    real accounts or systems.
+                </p>
+
+                <p>
+                    During the laboratory, different John the Ripper
+                    options, password wordlists, hash formats,
+                    session management features, and troubleshooting
+                    techniques were explored.
+                </p>
+
+            </div>
+
+
+            <div class="project-card">
+
+                <h3>Lab Environment</h3>
+
+                <div class="info-item">
+                    <span>Operating System</span>
+                    <strong>Kali Linux</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Tool</span>
+                    <strong>John the Ripper</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Hash Algorithm</span>
+                    <strong>MD5</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Attack Type</span>
+                    <strong>Dictionary Attack</strong>
+                </div>
+
+                <div class="info-item">
+                    <span>Wordlist</span>
+                    <strong>RockYou</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- OBJECTIVES -->
+
+    <section id="objectives" class="section alternate">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                02 — OBJECTIVES
+            </p>
+
+            <h2>
+                What I Wanted to Learn
+            </h2>
+
+        </div>
+
+
+        <div class="cards-grid">
+
+            <article class="card">
+
+                <div class="card-icon">
+                    🔐
+                </div>
+
+                <h3>
+                    Password Hashing
+                </h3>
+
+                <p>
+                    Understand how passwords can be transformed into
+                    hash values and why hashes are used for password
+                    storage.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    📖
+                </div>
+
+                <h3>
+                    Wordlists
+                </h3>
+
+                <p>
+                    Learn how password dictionaries such as RockYou
+                    can be used during controlled password auditing.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    ⚡
+                </div>
+
+                <h3>
+                    Dictionary Attacks
+                </h3>
+
+                <p>
+                    Understand how candidate passwords are tested
+                    against a target password hash.
+                </p>
+
+            </article>
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    🛠️
+                </div>
+
+                <h3>
+                    Troubleshooting
+                </h3>
+
+                <p>
+                    Investigate common errors involving wordlists,
+                    sessions, recovery files, and hash formats.
+                </p>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- HOW IT WORKS -->
+
+    <section id="process" class="section">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                03 — PROCESS
+            </p>
+
+            <h2>
+                How the Attack Works
+            </h2>
+
+            <p>
+                John the Ripper does not simply "decrypt" a password
+                hash. It tests candidate passwords and compares the
+                resulting hashes with the target hash.
+            </p>
+
+        </div>
+
+
+        <div class="process">
+
+            <div class="process-step">
+
+                <span class="step-number">01</span>
+
+                <h3>
+                    Password
+                </h3>
+
+                <p>
+                    A test password is selected for the laboratory.
+                </p>
+
+            </div>
+
+
+            <div class="process-arrow">
+                ↓
+            </div>
+
+
+            <div class="process-step">
+
+                <span class="step-number">02</span>
+
+                <h3>
+                    Hash
+                </h3>
+
+                <p>
+                    The password is converted into a test MD5 hash.
+                </p>
+
+            </div>
+
+
+            <div class="process-arrow">
+                ↓
+            </div>
+
+
+            <div class="process-step">
+
+                <span class="step-number">03</span>
+
+                <h3>
+                    Wordlist
+                </h3>
+
+                <p>
+                    John reads candidate passwords from a wordlist.
+                </p>
+
+            </div>
+
+
+            <div class="process-arrow">
+                ↓
+            </div>
+
+
+            <div class="process-step">
+
+                <span class="step-number">04</span>
+
+                <h3>
+                    Comparison
+                </h3>
+
+                <p>
+                    Candidate hashes are compared with the target.
+                </p>
+
+            </div>
+
+
+            <div class="process-arrow">
+                ↓
+            </div>
+
+
+            <div class="process-step success">
+
+                <span class="step-number">05</span>
+
+                <h3>
+                    Match
+                </h3>
+
+                <p>
+                    If a matching hash is found, the candidate
+                    password has been identified.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- HASH GENERATION -->
+
+    <section class="section alternate">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                04 — HASH GENERATION
+            </p>
+
+            <h2>
+                Creating the Test Hash
+            </h2>
+
+        </div>
+
+
+        <div class="terminal">
+
+            <div class="terminal-header">
+
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+                <span class="terminal-dot"></span>
+
+                <span class="terminal-title">
+                    Kali Linux Terminal
+                </span>
+
+            </div>
+
+
+            <div class="terminal-body">
+
+                <p>
+                    <span class="prompt">
+                        $
+                    </span>
+
+                    echo -n "password12" | md5sum
+                </p>
+
+                <p class="terminal-output">
+                    c24a542f884e144451f9063b79e7994e
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="explanation">
+
+            <p>
+                The resulting hash was stored in
+                <code>hash.txt</code> and used as the target
+                for the controlled password-auditing experiment.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- COMMANDS -->
+
+    <section id="commands" class="section">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                05 — COMMANDS
+            </p>
+
+            <h2>
+                John the Ripper Commands
+            </h2>
+
+            <p>
+                Important commands and options used during the
+                study.
+            </p>
+
+        </div>
+
+
+        <div class="command-list">
+
+
+            <article class="command-card">
+
+                <div class="command-info">
+
+                    <h3>
+                        Check Version
+                    </h3>
+
+                    <p>
+                        Displays the installed John the Ripper version. Remember JTP comes pre-installed in Kali
+                    </p>
+
+                </div>
+
+                <pre><code>john --version</code></pre>
+
+            </article>
+
+
+            <article class="command-card">
+
+                <div class="command-info">
+
+                    <h3>
+                        List Hash Formats
+                    </h3>
+
+                    <p>
+                        Displays the password-hash formats supported
+                        by the JTP build.
+                    </p>
+
+                </div>
+
+                <pre><code>john --list=formats</code></pre>
+
+            </article>
+
+
+            <article class="command-card">
+
+                <div class="command-info">
+
+                    <h3>
+                        Dictionary Attack
+                    </h3>
+
+                    <p>
+                        Uses a specified wordlist to test candidate
+                        passwords against the target hash.
+                    </p>
+
+                </div>
+
+                <pre><code>john --format=raw-md5 --wordlist=test-wordlist.txt hash.txt</code></pre>
+
+            </article>
+
+
+            <article class="command-card">
+
+                <div class="command-info">
+
+                    <h3>
+                        RockYou Wordlist
+                    </h3>
+
+                    <p>
+                        Uses the RockYou wordlist for the controlled
+                        laboratory experiment for the study.
+                    </p>
+
+                </div>
+
+                <pre><code>john --wordlist=/usr/share/wordlists/rockyou.txt --format=raw-md5 hash.txt</code></pre>
+
+            </article>
+
+
+            <article class="command-card">
+
+                <div class="command-info">
+
+                    <h3>
+                        Show Results
+                    </h3>
+
+                    <p>
+                        Displays passwords that John has already
+                        recovered.
+                    </p>
+
+                </div>
+
+                <pre><code>john --show --format=raw-md5 hash.txt</code></pre>
+
+            </article>
+
+
+            <article class="command-card">
+
+                <div class="command-info">
+
+                    <h3>
+                        Restore Session
+                    </h3>
+
+                    <p>
+                        Resumes a previously interrupted John session.
+                    </p>
+
+                </div>
+
+                <pre><code>john --restore</code></pre>
+
+            </article>
+
+
+            <article class="command-card">
+
+                <div class="command-info">
+
+                    <h3>
+                        Check Session Status
+                    </h3>
+
+                    <p>
+                        Displays information about the current
+                        John session.
+                    </p>
+
+                </div>
+
+                <pre><code>john --status</code></pre>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- RESULTS -->
+
+    <section class="section alternate">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                06 — RESULTS
+            </p>
+
+            <h2>
+                Password Recovery
+            </h2>
+
+        </div>
+
+
+        <div class="result-box">
+
+            <div class="result-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <h3>
+                    Controlled Test Successful
+                </h3>
+
+                <p>
+                    The test password was successfully identified
+                    from the controlled test wordlist.
+                </p>
+
+                <code>
+                    password12
+                </code>
+
+            </div>
+
+        </div>
+
+
+        <div class="result-terminal">
+
+            <pre><code>$ john --show --format=raw-md5 hash.txt
+
+c24a542f884e144451f9063b79e7994e
+
+1 password hash cracked, 0 left</code></pre>
+
+        </div>
+
+    </section>
+
+
+    <!-- EVIDENCE -->
+
+    <section id="evidence" class="section">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                07 — EVIDENCE
+            </p>
+
+            <h2>
+                Laboratory Evidence
+            </h2>
+
+            <p>
+                Screenshots documenting the different stages of
+                the controlled laboratory.
+            </p>
+
+        </div>
+
+
+        <div class="evidence-grid">
+
+
+            <figure class="evidence-card">
+
+                <img
+                    src="screenshots/nc0.png"
+                    alt="John the Ripper installation">
+
+                <figcaption>
+
+                    <strong>
+                        Installation
+                    </strong>
+
+                    <span>
+                        John the Ripper installed and verified
+                        on Kali Linux.
+                    </span>
+
+                </figcaption>
+
+            </figure>
+
+
+            <figure class="evidence-card">
+
+                <img
+                    src="screenshots/pic5.png"
+                    alt="MD5 hash generation">
+
+                <figcaption>
+
+                    <strong>
+                        Hash Generation
+                    </strong>
+
+                    <span>
+                        Generation of the controlled test MD5 hash.
+                    </span>
+
+                </figcaption>
+
+            </figure>
+
+
+            <figure class="evidence-card">
+
+                <img
+                    src="screenshots/pic7.png"
+                    alt="Password recovery using John the Ripper">
+
+                <figcaption>
+
+                    <strong>
+                        Password Recovery
+                    </strong>
+
+                    <span>
+                        Controlled test password recovered by John.
+                    </span>
+
+                </figcaption>
+
+            </figure>
+
+
+            <figure class="evidence-card">
+
+                <img
+                    src="screenshots/nc1.png"
+                    alt="RockYou dictionary attack">
+
+                <figcaption>
+
+                    <strong>
+                        RockYou Attack
+                    </strong>
+
+                    <span>
+                        Dictionary attack using the RockYou wordlist.
+                    </span>
+
+                </figcaption>
+
+            </figure>
+
+
+            <figure class="evidence-card">
+
+                <img
+                    src="screenshots/rock.png"
+                    alt="RockYou attack result">
+
+                <figcaption>
+
+                    <strong>
+                        Attack Result
+                    </strong>
+
+                    <span>
+                        Output from the controlled RockYou experiment.
+                    </span>
+
+                </figcaption>
+
+            </figure>
+
+
+            <figure class="evidence-card">
+
+                <img
+                    src="screenshots/pic3.png"
+                    alt="John the Ripper troubleshooting">
+
+                <figcaption>
+
+                    <strong>
+                        Troubleshooting
+                    </strong>
+
+                    <span>
+                        Investigation of a John the Ripper issue.
+                    </span>
+
+                </figcaption>
+
+            </figure>
+
+        </div>
+
+    </section>
+
+
+    <!-- TROUBLESHOOTING-->
+
+    <section class="section alternate">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                08 — TROUBLESHOOTING
+            </p>
+
+            <h2>
+                Problems Encountered
+            </h2>
+
+        </div>
+
+
+        <div class="troubleshooting-list">
+
+
+            <article>
+
+                <span class="problem-number">
+                    01
+                </span>
+
+                <div>
+
+                    <h3>
+                        Incorrect Wordlist Path
+                    </h3>
+
+                    <p>
+                        A mistyped wordlist path prevented John from
+                        locating the required file. The correct Kali
+                        wordlist directory was verified before
+                        rerunning the command.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article>
+
+                <span class="problem-number">
+                    02
+                </span>
+
+                <div>
+
+                    <h3>
+                        Recovery File Locked
+                    </h3>
+
+                    <p>
+                        A John recovery file was locked by an existing
+                        or interrupted session. Running processes were
+                        checked before continuing the laboratory.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <article>
+
+                <span class="problem-number">
+                    03
+                </span>
+
+                <div>
+
+                    <h3>
+                        Hash Already Cracked
+                    </h3>
+
+                    <p>
+                        John reported that there were no password
+                        hashes left to crack. The stored result was
+                        checked using the <code>--show</code> option.
+                    </p>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+    <!-- LESSONS LEARNED -->
+
+    <section id="lessons" class="section">
+
+        <div class="section-heading">
+
+            <p class="section-label">
+                09 — LEARNING
+            </p>
+
+            <h2>
+                What I Learned
+            </h2>
+
+        </div>
+
+
+        <div class="lessons-grid">
+
+            <div class="lesson">
+                <span>01</span>
+                <p>
+                    Password hashes are not the same as plaintext
+                    passwords.
+                </p>
+            </div>
+
+            <div class="lesson">
+                <span>02</span>
+                <p>
+                    Dictionary attacks depend heavily on the quality
+                    of the wordlist.
+                </p>
+            </div>
+
+            <div class="lesson">
+                <span>03</span>
+                <p>
+                    Weak passwords can be vulnerable to offline
+                    password-auditing techniques.
+                </p>
+            </div>
+
+            <div class="lesson">
+                <span>04</span>
+                <p>
+                    John the Ripper provides useful session and
+                    recovery features for long-running tasks.
+                </p>
+            </div>
+
+            <div class="lesson">
+                <span>05</span>
+                <p>
+                    Troubleshooting file paths and session files is
+                    an important part of practical cybersecurity work.
+                </p>
+            </div>
+
+            <div class="lesson">
+                <span>06</span>
+                <p>
+                    Security tools should only be used against systems
+                    and credentials where authorization exists.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ETHICAL CONSIDERATIONS -->
+
+    <section class="section ethics">
+
+        <div class="ethics-content">
+
+            <p class="section-label">
+                RESPONSIBLE SECURITY
+            </p>
+
+            <h2>
+                Ethical &amp; Legal Use
+            </h2>
+
+            <p>
+                This project was performed in a controlled laboratory
+                environment using test credentials and hashes created
+                for educational purposes.
+            </p>
+
+            <p>
+                John the Ripper should only be used for password
+                auditing when you have explicit authorization.
+                Attempting to recover passwords from systems or
+                accounts without permission may be illegal and
+                unethical.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+<!--  FOOTER -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <h3>
+                🔐 John the Ripper Lab
+            </h3>
+
+            <p>
+                ##Cybersecurity learning project.
+            </p>
+            <p>##Self Pace Learning</p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="#overview">
+                Project
+            </a>
+
+            <a href="#commands">
+                Commands
+            </a>
+
+            <a href="#evidence">
+                Evidence
+            </a>
+
+            <a href="#lessons">
+                Lessons
+            </a>
+
+        </div>
+
+    </div>
+
+    <div class="footer-bottom">
+
+        <p>
+            &copy; 2026 Cybersecurity Lab Project
+        </p>
+
+        <p>
+            Built with HTML, CSS &amp; JavaScript
+        </p>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
